@@ -1,0 +1,23 @@
+version: "3"
+services:
+  postgres:
+    image: "postgres:latest"
+    environment:
+      POSTGRES_DB: cars
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    container_name: "my_postgres"
+    ports:
+      - "5432:5432"
+
+  pgadmin:
+    image: dpage/pgadmin4
+    links:
+      - postgres
+    depends_on:
+      - postgres
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
