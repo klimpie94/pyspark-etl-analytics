@@ -3,7 +3,7 @@ This repo contains code examples of processing and analysing data with Apache Sp
 
 ## Docker-compose
 
-* To spin up a local PostgreSQL database:
+* To spin up a local PostgreSQL database with pgAdmin:
 
 ```
 docker-compose -f ./pyspark-etl-analytics/docker-compose.yml up
