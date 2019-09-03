@@ -3,7 +3,6 @@ import psycopg2
 from pyspark.sql import SparkSession
 from pyspark.sql.types import StructField, StructType, StringType, LongType, TimestampType, ShortType, DateType
 from pyspark.sql.functions import col
-from os import environ
 
 def main():
 
@@ -16,7 +15,7 @@ def main():
 
     print("Connection to PostgreSQL created", "\n")
 
-    # cursor
+    # create a cursor out of a connection; a cursor allows you to communicate with Postgres and execute commands
     cur = conn.cursor()
 
     spark = initialize_Spark()
